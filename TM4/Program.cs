@@ -2,32 +2,68 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-
+using TM4.DBResources;
 namespace TM4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Employee E = new Employee();
-            //E.Name = "Deepak";
-            //E.Id = 1011;
-            //E.Email = "deepak8999@gmail.com";
-            //E.Salary = 12000;
-          
+            ChildEmployee obj = new ChildEmployee();
+            obj.Fname = "Rakesh";
+            obj.Lname = "Verma";
+            obj.AnualSalary = 120000;
+            obj.Bonus = 6000;
 
-            E["id"] = 1001;
-            E["name"] = "Rakesh";
-            E["email"] = "rakesh55@gmail.com";
-            E[3] = 13000;
-
-            Console.WriteLine(E[0]);
-            Console.WriteLine(E[1]);
-            Console.WriteLine(E[2]);
-            Console.WriteLine(E["salary"]);
+            Console.WriteLine("Full Name: "+obj.GetFullName());
+            Console.WriteLine("Total Month Salary : "+obj.GetMonthSalary());
 
 
-           
+
+            //Calculation obj = new Calculation();
+            //var result=obj.Addition(10.54, 90.888);
+            //Console.WriteLine("Result : "+result);
+
+            //obj.Login("923892422");
+
+            //CnnectionProvider provider = new CnnectionProvider();
+            //provider.ReadConnection();
+            //ManageEmployees manage = new ManageEmployees();
+            //manage.CreateEmployee();
+
+            //Utility o1 = new Utility();
+            //Utility o2 = new Utility();
+            //Utility o3 = new Utility();
+
+            //o1.PrintNum();
+
+
+
+            // Utility.SendEmail();
+
+            //Utility utility = new Utility();
+            //utility.SendMessage();
+
+
+            //Employee E = new Employee();
+            ////E.Name = "Deepak";
+            ////E.Id = 1011;
+            ////E.Email = "deepak8999@gmail.com";
+            ////E.Salary = 12000;
+
+
+            //E["id"] = 1001;
+            //E["name"] = "Rakesh";
+            //E["email"] = "rakesh55@gmail.com";
+            //E[3] = 13000;
+
+            //Console.WriteLine(E[0]);
+            //Console.WriteLine(E[1]);
+            //Console.WriteLine(E[2]);
+            //Console.WriteLine(E["salary"]);
+
+
+
 
 
             //BankingSavingCustomer customer = new BankingSavingCustomer("23100922112", "Rakesh Sharma", 20000);
