@@ -41,6 +41,822 @@ Difference Between overloading and Overriding ?
 
 find atleast 5 differences ?
 
+Interface:-
+---------------------------------------------------------------
+Difference between Abstract class and interface ?
+-------------
+1- Abstract class is partial implemented class, while interface is pure abstract.
+2- Abstract class created by Abstract keyword, while interface created by interface keyword.
+3- Abstract method created by abstract keyword, while interface method by default abstract.
+4- Abstract method is overridden , while interface method will be newly implmented in drived class.
+5- A class can inherit only one abstract class, but interface can by more than one.
+--------------------------------------------------------------------------------------------
+What, when, why ?
+-----------------------------------------------------------------
+Case Study--
+Create A Employee Service and Create Different -2 Interface like- employee Login, get attdence, get pay slip, create,update, remove, add attendence etc.
+and Access with the help of interface.
+
+-------------------------------------------------------------------------------------------
+Collections:-  Collections are the ready made classes, which are capable to read and write list of items in very flexible manner, basically it resolve array issues, like - size issue, type issue, memory issue etc.
+Collection is 2 type.
+		1- Non-generic collection
+		2- Generic Collection
+---------------------------------------------------------------------------------
+1- Non-Generic collection:-  are the non- type safe collection, which are not bounded with type, they store items in form of object, and deal every item like object. all the non-generic collection classes exist in system.collections; namespace.
+below are the classes.
+	A- ArrayList
+	B- Stack
+	C- Queue
+	D- SortedList
+	E- hastable
+----------------------------------------------------------------------------------------
+
+
+ArrayList is a non-generic type of collection in C#. It can contain elements of any data types. It is similar to an array, except that it grows automatically as you add items in it. Unlike an array, you don't need to specify the size of ArrayList.
+
+Example: Initialize ArrayList
+
+ArrayList myArryList = new ArrayList();
+
+Important Properties and methods of ArrayList:
+
+Property		Description
+------------------------------------------------------------------------------------
+Capacity		Gets or sets the number of elements that the ArrayList can	contain.
+
+Count			Gets the number of elements actually contained in the ArrayList.
+
+IsFixedSize		Gets a value indicating whether the ArrayList has a fixed size.
+
+
+IsReadOnly		Gets a value indicating whether the ArrayList is read-only.
+
+Item			Gets or sets the element at the specified index.
+-----------------------------------------------------------------------------------
+
+Method			Description
+---------------------------------------------------------------------------
+Add()/AddRange()	Add() method adds single elements at the end of ArrayList.
+
+AddRange() 		method adds all the elements from the specified collection into ArrayList.
+
+Insert()/InsertRange()	Insert() method insert a single elements at the specified index in                        ArrayList.
+
+InsertRange()		method insert all the elements of the specified collection starting from                  specified index in ArrayList.
+
+Remove()/RemoveRange()	Remove() method removes the specified element from the ArrayList.
+
+RemoveRange() 		method removes a range of elements from the ArrayList.
+
+RemoveAt()		Removes the element at the specified index from the ArrayList.
+
+Sort()			Sorts entire elements of the ArrayList.
+
+Reverse()		Reverses the order of the elements in the entire ArrayList.
+
+Contains		Checks whether specified element exists in the ArrayList or not.				          Returns true if exists otherwise false.
+
+Clear			Removes all the elements in ArrayList.
+
+CopyTo			Copies all the elements or range of elements to compitible Array.
+
+IndexOf			Search specified element and returns zero based index if found. 				          Returns -1 if element not found.
+
+ToArray			Returns compitible array from an ArrayList.
+
+example:
+ArrayList myArryList = new ArrayList();
+myArryList.Add(1);
+myArryList.Add("Two");
+myArryList.Add(3);
+myArryList.Add(4.5f);
+
+//Access individual item using indexer
+int firstElement = (int) myArryList[0]; //returns 1
+string secondElement = (string) myArryList[1]; //returns "Two"
+int thirdElement = (int) myArryList[2]; //returns 3
+float fourthElement = (float) myArryList[3]; //returns 4.5
+
+//use var keyword
+var firstElement = myArryList[0]; //returns 1
+
+C# SortedList:
+
+	The SortedList collection stores key-value pairs in the ascending order of key by default. SortedList class implements IDictionary & ICollection interfaces, so elements can be accessed both by key and index.
+
+C# includes two types of SortedList, generic SortedList and non-generic SortedList. Here, we will learn about non-generic SortedList.
+
+Important Properties and Methods of SortedList:
+
+Property	Description
+Capacity	Gets or sets the number of elements that the SortedList instance can store.
+
+Count		Gets the number of elements actually contained in the SortedList.
+
+IsFixedSize	Gets a value indicating whether the SortedList has a fixed size.
+
+IsReadOnly	Gets a value indicating whether the SortedList is read-only.
+
+Item		Gets or sets the element at the specified key in the SortedList.
+
+Keys		Get list of keys of SortedList.
+Values   	Get list of values in SortedList.
+
+Method		Description
+----------------------------------------------------------------------------------
+void Add(object key, object value)	Add key-value pairs into SortedList.
+
+void Remove(object key)		Removes element with the specified key.
+
+void RemoveAt(int index)	Removes element at the specified index.
+
+bool Contains(object key)	Checks whether specified key exists in SortedList.
+
+void Clear()			Removes all the elements from SortedList.
+
+object GetByIndex(int index)	Returns the value by index stored in internal array
+
+object GetKey(int index)	Returns the key stored at specified index in internal array
+
+int IndexOfKey(object key)	Returns an index of specified key stored in internal array
+int IndexOfValue(object value)	Returns an index of specified value stored in 				internal array
+
+
+Example: Add key-value pairs in SortedList
+
+SortedList sortedList1 = new SortedList();
+sortedList1.Add(3, "Three");
+sortedList1.Add(4, "Four");
+sortedList1.Add(1, "One");
+sortedList1.Add(5, "Five");
+sortedList1.Add(2, "Two");
+
+SortedList sortedList2 = new SortedList();
+sortedList2.Add("one", 1);
+sortedList2.Add("two", 2);
+sortedList2.Add("three", 3);
+sortedList2.Add("four", 4);
+
+SortedList sortedList3 = new SortedList();
+sortedList3.Add(1.5, 100);
+sortedList3.Add(3.5, 200);
+sortedList3.Add(2.4, 300);
+sortedList3.Add(2.3, null);
+sortedList3.Add(1.1, null);
+
+
+
+
+            foreach (DictionaryEntry i in sortedList1)
+                Console.WriteLine("Key = {0} value = {1}",i.Key,i.Value);
+
+
+Example: Key of different datatypes throws exception:
+
+SortedList sortedList = new SortedList();
+
+sortedList.Add(3, "Three");
+sortedList.Add("Four", "Four"); // Throw exception: InvalidOperationException
+sortedList.Add(1, "One");
+sortedList.Add(8, "Five");
+sortedList.Add(2, "Two");
+
+
+ortedList sortedList = new SortedList();
+sortedList.Add("one", 1);
+sortedList.Add("two", 2);
+sortedList.Add("three", 3);
+sortedList.Add("four", "Four");
+
+int i = (int) sortedList["one"];
+int j = (int) sortedList["two"];
+string str = (string) sortedList["four"];
+
+Console.WriteLine(i);
+Console.WriteLine(j);
+Console.WriteLine(str);
+
+
+
+SortedList sortedList = new SortedList();
+sortedList.Add(3, "Three");
+sortedList.Add(2, "Two");
+sortedList.Add(4, "Four");
+sortedList.Add(1, "One");
+sortedList.Add(8, "Five");
+
+sortedList.Contains(2); // returns true
+sortedList.Contains(4); // returns true
+sortedList.Contains(6); // returns false
+
+sortedList.ContainsKey(2); // returns true
+sortedList.ContainsKey(6); // returns false
+
+sortedList.ContainsValue("One"); // returns true
+sortedList.ContainsValue("Ten"); // returns false
+
+
+C# Stack:
+
+	C# includes a special type of collection which stores elements in LIFO style(Last In First Out). C# includes a generic and non-generic Stack. Here, you are going to learn about the non-generic stack.
+
+Stack allows null value and also duplicate values. It provides a Push() method to add a value and Pop() or Peek() methods to retrieve values.
+
+
+
+Important Properties and Methods of Stack:
+
+Property	Usage
+Count		Returns the total count of elements in the 		Stack.
+Method		Usage
+Push		Inserts an item at the top of the stack.
+Peek		Returns the top item from the stack.
+Pop		Removes and returns items from the top of 		the stack.
+Contains	Checks whether an item exists in the stack 		or not.
+
+
+Stack myStack = new Stack();
+myStack.Push("Hello!!");
+myStack.Push(null);
+myStack.Push(1);
+myStack.Push(2);
+myStack.Push(3);
+myStack.Push(4);
+myStack.Push(5);
+
+foreach (var itm in myStack)
+     Console.Write(itm);
+
+
+
+Peek():
+
+The Peek() method returns the last (top-most) value from the stack. Calling Peek() method on empty stack will throw InvalidOperationException. So always check for elements in the stack before retrieving elements using the Peek() method.
+
+
+Stack myStack = new Stack();
+myStack.Push(1);
+myStack.Push(2);
+myStack.Push(3);
+myStack.Push(4);
+myStack.Push(5);
+
+Console.WriteLine(myStack.Peek());
+Console.WriteLine(myStack.Peek());
+Console.WriteLine(myStack.Peek());
+
+
+
+Pop():
+
+You can also retrieve the value using the Pop() method. The Pop() method removes and returns the value that was added last to the Stack. The Pop() method call on an empty stack will raise an InvalidOperationException. So always check for number of elements in stack must be greater than 0 before calling Pop() method.
+
+
+Example: Access Stack
+
+Stack myStack = new Stack();
+myStack.Push(1);
+myStack.Push(2);
+myStack.Push(3);
+myStack.Push(4);
+myStack.Push(5);
+
+Console.Write("Number of elements in Stack: {0}", myStack.Count);
+
+while (myStack.Count > 0)
+     Console.WriteLine(myStack.Pop());
+
+Console.Write("Number of elements in Stack: {0}", myStack.Count);
+
+
+
+
+Contains:
+
+The Contains() method checks whether the specified item exists in a Stack collection or not. It returns true if it exists; otherwise it returns false.
+
+Contains() method signature: bool Contains(object obj);
+
+Example: Stack.Contains()
+
+Stack myStack = new Stack();
+myStack.Push(1);
+myStack.Push(2);
+myStack.Push(3);
+myStack.Push(4);
+myStack.Push(5);
+
+myStack.Contains(2); // returns true
+myStack.Contains(10); // returns false
+
+
+
+
+Clear:
+
+The Clear() method removes all the values from the stack.
+
+Example: Stack.Contains()
+
+Stack myStack = new Stack();
+myStack.Push(1);
+myStack.Push(2);
+myStack.Push(3);
+myStack.Push(4);
+myStack.Push(5);
+
+myStack.Clear(); // removes all elements
+
+Console.Write("Number of elements in Stack: {0}", myStack.Count);
+
+
+
+Note :
+1- Stack stores the values in LIFO (Last in First out) style. The element which is added last will be the element to come out first.
+2- Use the Push() method to add elements into Stack.
+3- The Pop() method returns and removes elements from the top of the Stack.
+	Calling the Pop() method on the empty Stack will throw an exception.
+4- The Peek() method always returns top most element in the Stack.
+
+
+
+
+C# Queue:
+
+C# includes a Queue collection class in the System.Collection namespace. Queue stores the elements in FIFO style (First In First Out), exactly opposite of the Stack collection. It contains the elements in the order they were added.
+
+
+
+Important Properties and Methods of Queue:
+
+Property	Usage
+Count		Returns the total count of elements in the 		Queue.
+
+Method		Usage
+Enqueue		Adds an item into the queue.
+Dequeue		Removes and returns an item from the 		beginning of the queue.
+Peek		Returns an first item from the queue
+Contains	Checks whether an item is in the queue or 		not
+Clear		Removes all the items from the queue.
+
+TrimToSize	Sets the capacity of the queue to the 		actual number of items in the queue.
+
+example:
+
+Queue queue = new Queue();
+queue.Enqueue(3);
+queue.Enqueue(2);
+queue.Enqueue(1);
+queue.Enqueue("Four");
+
+Console.WriteLine("Number of elements in the Queue: {0}", queue.Count);
+
+while (queue.Count > 0)
+    Console.WriteLine(queue.Dequeue());
+
+Console.WriteLine("Number of elements in the Queue: {0}", queue.Count);
+
+
+
+Peek():
+
+The Peek() method always returns the first item from a queue collection without removing it from the queue. Calling Peek() and Dequeue() methods on an empty queue collection will throw a run time exception "InvalidOperationException".
+
+Peek() Method Signature: object Peek();
+
+Example: Peek()
+
+Queue queue = new Queue();
+queue.Enqueue(3);
+queue.Enqueue(2);
+queue.Enqueue(1);
+queue.Enqueue("Four");
+
+Console.WriteLine("Number of elements in the Queue: {0}", queue.Count);
+
+Console.WriteLine(queue.Peek());
+Console.WriteLine(queue.Peek());
+Console.WriteLine(queue.Peek());
+
+Console.WriteLine("Number of elements in the Queue: {0}", queue.Count);
+
+
+Queue queue = new Queue();
+queue.Enqueue(3);
+queue.Enqueue(2);
+queue.Enqueue(1);
+queue.Enqueue("Four");
+
+Console.WriteLine("Number of elements in Queue: {0}", queue.Count);
+
+foreach (var i in queue.ToArray())
+        Console.WriteLine(i);
+
+Console.WriteLine("Number of elements in Queue: {0}", queue.Count);
+
+
+Contains:
+
+The Contains() method checks whether an item exists in a queue. It returns true if the specified item exists; otherwise it returns false.
+
+
+Example: Contains
+
+Queue queue = new Queue();
+queue.Enqueue(3);
+queue.Enqueue(2);
+queue.Enqueue(1);
+queue.Enqueue("Four");
+
+queue.Contains(2); // true
+queue.Contains(100); //false
+
+
+
+Clear():
+
+The Clear() method removes all the items from a queue.
+
+
+
+C# Hashtable:
+
+C# includes Hashtable collection in System.Collections namespace, which is similar to generic Dictionary collection. The Hashtable collection stores key-value pairs. It optimizes lookups by computing the hash code of each key and stores it in a different bucket internally and then matches the hash code of the specified key at the time of accessing values.
+
+
+Property		Description
+Count			Gets the total count of key/value 			pairs in the Hashtable.
+
+IsReadOnly		Gets boolean value indicating 			whether the Hashtable is read-			only.
+
+Item			Gets or sets the value associated 			with the specified key.
+
+Keys			Gets an ICollection of keys in the 			Hashtable.
+
+Values			Gets an ICollection of values in 			the Hashtable.
+
+
+Methods			Usage
+Add			Adds an item with a key and value 			into the hashtable.
+Remove			Removes the item with the 			specified key from the hashtable.
+
+Clear			Removes all the items from the 			hashtable.
+
+Contains		Checks whether the hashtable 			contains a specific key.
+
+ContainsKey		Checks whether the hashtable 			contains a specific key.
+
+ContainsValue		Checks whether the hashtable 			contains a specific value.
+
+example:
+
+Hashtable ht = new Hashtable();
+
+ht.Add(1, "One");
+ht.Add(2, "Two");
+ht.Add(3, "Three");
+ht.Add(4, "Four");
+ht.Add(5, null);
+ht.Add("Fv", "Five");
+ht.Add(8.5F, 8.5);
+
+
+or
+
+Hashtable ht = new Hashtable()
+                {
+                    { 1, "One" },
+                    { 2, "Two" },
+                    { 3, "Three" },
+                    { 4, "Four" },
+                    { 5, null },
+                    { "Fv", "Five" },
+                    { 8.5F, 8.5 }
+                };
+
+
+
+
+Hashtable can include all the elements of Dictionary as shown below.
+
+Example: Add()
+
+Dictionary<int, string>
+	dict = new Dictionary<int, string>
+		();
+
+		dict.Add(1, "one");
+		dict.Add(2, "two");
+		dict.Add(3, "three");
+
+		Hashtable ht = new Hashtable(dict);
+
+
+
+		Example: Access Hashtable using Keys & Values
+
+		Hashtable ht = new Hashtable();
+		ht.Add(1, "One");
+		ht.Add(2, "Two");
+		ht.Add(3, "Three");
+		ht.Add(4, "Four");
+		ht.Add("Fv", "Five");
+		ht.Add(8.5F, 8.5);
+
+		foreach (var key in ht.Keys )
+		Console.WriteLine("Key:{0}, Value:{1}",key , ht[key]);
+
+		Console.WriteLine("***All Values***");
+
+		foreach (var value in ht.Values)
+		Console.WriteLine("Value:{0}", value);
+
+
+
+		ashtable ht = new Hashtable();
+		ht.Add(1, "One");
+		ht.Add(2, "Two");
+		ht.Add(3, "Three");
+		ht.Add(4, "Four");
+		ht.Add("Fv", "Five");
+		ht.Add(8.5F, 8.5);
+
+		ht.Remove("Fv"); // removes {"Fv", "Five"}
+
+
+
+		Hashtable ht = new Hashtable();
+		ht.Add(1, "One");
+		ht.Add(2, "Two");
+		ht.Add(3, "Three");
+		ht.Add(4, "Four");
+
+		ht.Contains(2);// returns true
+		ht.ContainsKey(2);// returns true
+		ht.Contains(5); //returns false
+		ht.ContainsValue("One"); // returns true
+
+
+
+		Difference between Hashtable and Dictionary in C#:
+
+
+		Hashtable		Dictionary
+
+		1-Hashtable included in System.Collections namespace.
+
+		1-Dictionary included in System.Collections.Generic 	namespace.
+		2- Hashtable is loosely typed (non-generic) collection, 	this means it stores key-value pairs of any data 	types.
+
+		2- Dictionary is generic collection. So it can store key-value pairs of specific data types.
+
+		3- Hashtable is thread safe.
+		3- Only public static members are thread safe in Dictionary.
+
+		4- Hashtable returns/throws Exception if we try to find a key which does not exist.
+		4- 	Dictionary returns null if we try to find a key
+		which does not exist.
+		5- Data retrival is slower than dictionary because of boxing-unboxing.
+
+		5- Data retrival is faster than Hashtable.
+
+
+
+
+
+
+
+
+		Generic Collection in C#:
+
+		We have learned about the collection in the previous section, e.g. ArrayList, SortedList, Queue, Stack and Hashtable. These types of collections can store any type of items. For example, ArrayList can store items of different data types:
+
+
+		ArrayList arList = new ArrayList();
+
+		arList.Add(1);
+		arList.Add("Two");
+		arList.Add(true);
+		arList.Add(100.45);
+		arList.Add(DateTime.Now);
+
+		The limitation of these collections is that while retrieving items, you need to cast into the appropriate data type, otherwise the program will throw a runtime exception. It also affects on performance, because of boxing and unboxing.
+
+		To overcome this problem, C# includes generic collection classes in the System.Collections.Generic namespace.
+
+		The following are widely used generic collections:
+
+		Generic Collections		Description
+		List<T>
+			Generic List<T>
+				contains elements of 				specified type. It grows 				automatically as you add 				elements in it.
+				Dictionary<TKey,TValue>
+					Dictionary<TKey,TValue>
+						contains key-value pairs.
+
+						SortedList<TKey,TValue>
+							SortedList stores key and 					value pairs. It 				automatically adds the 			elements in ascending order of key 			by default.
+
+							Hashset<T>
+								Hashset<T>
+									contains non-duplicate 				elements. It eliminates 				duplicate elements.
+
+									Queue<T>
+										Queue<T>
+											stores the values in FIFO 				style (First In First Out). It keeps the order in which the values were added. It provides an Enqueue() method to add values and a Dequeue() method to retrieve values from the collection.
+
+
+											Stack<T>
+												Stack<T>
+
+
+													stores the values as LIFO (Last In First Out). It provides a Push() method to add a value and Pop() & Peek() methods to retrieve values.
+
+
+													A generic collection gets all the benefit of generics. It doesn't need to do boxing and unboxing while storing or retrieving items and so performance is improved.
+
+
+
+
+
+
+
+
+
+													Exception in C#:
+
+													Basically the abnormal termination of program is called exception. it may occurs by many reasons.
+
+													An application may encounter an error during the execution. When an error occurs, either CLR or program code throws an exception which contains necessary information about the error. There are two types of exceptions in .Net, exceptions generated by the executing program and exceptions generated by the CLR.
+
+													C# includes built-in classes for every possible exception. All the exception classes are directly or indirectly derived from the Exception class. There are two main classes for exceptions - SystemException and ApplicationException. SystemException is a base class for all CLR generated errors whereas ApplicationException serves as a base class for all application related exceptions, which you want to raise on business rule violation.
+
+													c# provides a lot of exception classes like.
+
+
+													Exception		Description
+													ArgumentException	Raised when a non-null argument 						that is passed to a method is 						invalid.
+													ArgumentNullException	Raised when null argument is 						passed to a method.
+
+													ArgumentOutOfRangeException	Raised when the value of 							an argument is outside the 							range of valid values.
+
+													DivideByZeroException	Raised when an integer value is 						divide by zero.
+
+													FileNotFoundException	Raised when a physical file does 						not exist at the specified 						location.
+
+													FormatException		Raised when a value is not in an 						appropriate format to be converted 						from a string by a conversion 						method such as Parse.
+
+													IndexOutOfRangeException	Raised when an array index 							is outside the lower or 							upper bounds of an array 							or collection.
+
+													InvalidOperationException	Raised when a method call 							is invalid in an object's 							current state.
+
+													InvalidCastException	Raised when incompitible types are 						being converted.
+
+													KeyNotFoundException	Raised when the specified key for 						accessing a member in a collection 						is not exists.
+
+													NotSupportedException	Raised when a method or operation 						is not supported.
+
+													NullReferenceException	Raised when program access members 						of null object.
+
+													OverflowException	Raised when an arithmetic, 						casting, or conversion operation 						results in an overflow.
+
+													OutOfMemoryException	Raised when a program does not get 						enough memory to execute the code.
+													StackOverflowException	Raised when a stack in memory 						overflows.
+
+													TimeoutException	The time interval allotted to an 						operation has expired.
+
+
+													Exception Class:
+
+													Every exception class in .Net is derived from the base Exception class. It includes the following important properties using which you can use to get information about the exception when you handle the exception.
+
+													Property		Description
+
+													Message			Provides details about the cause 						of the exception.
+
+													StackTrace		Provides information about where 						the error occurred.
+
+													InnerException		Provides information about the 						series of exceptions that might 						have occurred.
+
+													HelpLink		This property can hold the help 						URL for a particular exception.
+
+													Note:
+													Exception is a base class for any type of exception class in C#.
+
+
+
+													C# -using  throw keyword to create exception:
+
+													We have seen in the previous section how to handle exceptions which are automatically raised by CLR. Here, we will see how to raise an exception manually.
+
+													An exception can be raised manually by using the throw keyword. Any type of exceptions which is derived from Exception class can be raised using the throw keyword.
+
+													Example: throw an exception
+
+													static void Main(string[] args)
+													{
+													Student std = null;
+
+													try
+													{
+													PrintStudentName(std);
+													}
+													catch(Exception ex)
+													{
+													Console.WriteLine(ex.Message );
+													}
+
+													Console.ReadKey();
+													}
+
+													private static void PrintStudentName( Student std)
+													{
+													if (std  == null)
+													throw new NullReferenceException("Student object is null.");
+
+													Console.WriteLine(std.StudentName);
+													}
+
+
+
+
+
+													Create Custom Exception Class in C#:
+
+													.net provide facility to create custom exception classes. to throw our custom exception .
+
+													For example, create InvalidStudentNameException class in a school application, which does not allow any special character or numeric value in a name of any of the students.
+
+
+													Example: ApplicationException
+
+													class Student
+													{
+													public int StudentID { get; set; }
+													public string StudentName { get; set; }
+													}
+
+													[Serializable]
+													class InvalidStudentNameException : Exception
+													{
+													public InvalidStudentNameException()
+													{
+
+													}
+
+													public InvalidStudentNameException(string name)
+													: base(String.Format("Invalid Student Name: {0}", name))
+													{
+
+													}
+
+													}
+
+													Now, you can raise InvalidStudentNameException in your program whenever the name contains special characters or numbers. Use the throw keyword to raise an exception.
+
+													Example: throw custom exception
+
+													class Program
+													{
+													static void Main(string[] args)
+													{
+													Student newStudent = null;
+
+													try
+													{
+													newStudent = new Student();
+													newStudent.StudentName = "James007";
+
+													ValidateStudent(newStudent);
+													}
+													catch(InvalidStudentNameException ex)
+													{
+													Console.WriteLine(ex.Message );
+													}
+
+
+													Console.ReadKey();
+													}
+
+													private static void ValidateStudent(Student std)
+													{
+													Regex regex = new Regex("^[a-zA-Z]+$");
+
+													if (regex.IsMatch(std.StudentName))
+													throw new InvalidStudentNameException(std.StudentName);
+
+													}
+													}
+
+
+
+
+
+
+
+
+
 
 
 

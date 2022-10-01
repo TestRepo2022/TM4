@@ -3,20 +3,49 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using TM4.DBResources;
+using TM4.UserManagement;
+using System.Collections;
+using UtilityLayer;
 namespace TM4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ChildEmployee obj = new ChildEmployee();
-            obj.Fname = "Rakesh";
-            obj.Lname = "Verma";
-            obj.AnualSalary = 120000;
-            obj.Bonus = 6000;
+            Employee employee = new Employee();
+            employee.callUtils();
 
-            Console.WriteLine("Full Name: "+obj.GetFullName());
-            Console.WriteLine("Total Month Salary : "+obj.GetMonthSalary());
+            //ArrayList list = new ArrayList();
+            //list.Add("Php");
+            //list.Add("java");
+            //list.Add(1000);
+            //list.Add(true);
+
+            //list.Capacity = 10;
+
+
+            //Console.WriteLine(list.Count);
+            //Console.WriteLine(list.Capacity);
+            //Console.WriteLine(list.IsFixedSize);
+            //Console.WriteLine(list.IsReadOnly);
+
+
+            //IUserAutho autho = new UserService();
+
+            //IUserManage manage = new UserService();
+
+
+
+
+
+            //ChildEmployee obj = new ChildEmployee();
+            //obj.Fname = "Rakesh";
+            //obj.Lname = "Verma";
+            //obj.AnualSalary = 120000;
+            //obj.Bonus = 6000;
+
+            //Console.WriteLine("Full Name: "+obj.GetFullName());
+            //Console.WriteLine("Total Month Salary : "+obj.GetMonthSalary());
 
 
 

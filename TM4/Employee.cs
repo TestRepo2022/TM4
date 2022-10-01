@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UtilityLayer;
 
 namespace TM4
 {
-    class Employee
+    class Employee:MyClass
     {
         public string Fname { get; set; }
         public string Lname { get; set; }
         public decimal AnualSalary { get; set; }
+
+        public void callUtils()
+        {
+            base.Message();
+        }
 
         public string GetFullName()
         {

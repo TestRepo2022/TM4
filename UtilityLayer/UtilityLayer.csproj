@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B57F336A-1610-4FF4-BC68-FE1C5D2F5B5A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TM4</RootNamespace>
-    <AssemblyName>TM4</AssemblyName>
+    <ProjectGuid>{F0857A97-8775-459E-9823-9C08BC6C4663}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityLayer</RootNamespace>
+    <AssemblyName>UtilityLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,30 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankingSavingCustomer.cs" />
-    <Compile Include="Calculation.cs" />
-    <Compile Include="DBResources\CnnectionProvider.cs" />
-    <Compile Include="DBResources\Connection.cs" />
-    <Compile Include="DBResources\ManageEmployees.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserManagement\UserService.cs" />
-    <Compile Include="UserManagement\IUserAutho.cs" />
-    <Compile Include="UserManagement\IUserManage.cs" />
-    <Compile Include="Utility.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HTMLPage1.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UtilityLayer\UtilityLayer.csproj">
-      <Project>{f0857a97-8775-459e-9823-9c08bc6c4663}</Project>
-      <Name>UtilityLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
